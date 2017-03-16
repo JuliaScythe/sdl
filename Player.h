@@ -5,15 +5,16 @@
 #ifndef SDL_PLAYER_H
 #define SDL_PLAYER_H
 
-
+#include <SDL.h>
 #include "GameObject.h"
+
 
 class Player : public GameObject {
 public:
 
-    void draw()
+    void draw(SDL_renderer *pRenderer)
     {
-        GameObject::draw();
+        GameObject::draw(nullptr);
         std::cout << "draw player";
     }
 

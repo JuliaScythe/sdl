@@ -7,10 +7,12 @@
 
 
 #include <iostream>
+#include <SDL.h>
 
 class GameObject {
 public:
-    virtual void draw() {std::cout << "draw go";}
+    virtual void load(int x, int y, int width, int height, std::string textureID);
+    virtual void draw(SDL_Renderer* pRenderer) {std::cout << "draw go";}
     virtual void update() {std::cout << "update go";}
     virtual void clean() {std::cout << "clean go";}
 
