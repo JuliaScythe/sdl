@@ -10,6 +10,6 @@ PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIRS})
 
-set(SOURCE_FILES main.cpp Game.h Game.cpp TextureManager.h TextureManager.cpp GameObject.h Player.h GameObject.cpp)
+set(SOURCE_FILES main.cpp Game.h Game.cpp TextureManager.h TextureManager.cpp GameObject.h Player.h GameObject.cpp Player.cpp)
 add_executable(sdl ${SOURCE_FILES})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2IMAGE_LIBRARIES})

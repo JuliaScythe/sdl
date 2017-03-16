@@ -5,32 +5,19 @@
 #ifndef SDL_PLAYER_H
 #define SDL_PLAYER_H
 
-#include <SDL.h>
 #include "GameObject.h"
 
 
 class Player : public GameObject {
 public:
 
-    void draw(SDL_Renderer* pRenderer)
-    {
-        GameObject::draw(nullptr);
-        std::cout << "draw player";
-    }
+    void load(int x, int y, int w, int h, std::string textureID);
 
-    void update()
-    {
-        std::cout << "update player";
-        m_x = 10;
-        m_y = 20;
-    }
+    void draw(SDL_Renderer* pRenderer);
 
-    void clean()
-    {
-        GameObject::clean();
-        std::cout << "clean player";
-    }
+    void update();
+
 };
 
 
-#endif //SDL_PLAYER_H
+#endif //SDL_PLAYER_

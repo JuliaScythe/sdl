@@ -7,6 +7,7 @@
 
 #include <SDL.h>
 #include "TextureManager.h"
+#include "Player.h"
 
 class Game {
 public:
@@ -32,6 +33,9 @@ private:
 
     int m_currentFrame;
     bool m_bRunning;
+
+    GameObject m_go;
+    Player m_player;
 
 };
 
