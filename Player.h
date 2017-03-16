@@ -12,7 +12,7 @@
 class Player : public GameObject {
 public:
 
-    void draw(SDL_renderer *pRenderer)
+    void draw(SDL_Renderer* pRenderer)
     {
         GameObject::draw(nullptr);
         std::cout << "draw player";
