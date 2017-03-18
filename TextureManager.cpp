@@ -1,5 +1,6 @@
 //
 // Created by jake on 14/03/17.
+// And you are a potato
 //
 
 #include <SDL_image.h>
