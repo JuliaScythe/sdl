@@ -6,6 +6,7 @@
 #define SDL_GAME_H
 
 #include <SDL.h>
+#include <vector>
 #include "TextureManager.h"
 #include "Player.h"
 
@@ -34,8 +35,10 @@ private:
     int m_currentFrame;
     bool m_bRunning;
 
-    GameObject m_go;
-    Player m_player;
+    std::vector<GameObject*> m_gameObjects;
+
+    GameObject* m_go;
+    GameObject* m_player;
 
 };
 
