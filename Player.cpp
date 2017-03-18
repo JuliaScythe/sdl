@@ -9,7 +9,7 @@ void Player::load(int x, int y, int w, int h, std::string textureID) {
     GameObject::load(x, y, w, h, textureID);
 }
 
-void Player::draw(SDL_Renderer *pRenderer) {
+void Player::draw(SDL_Renderer* pRenderer) {
     GameObject::draw(pRenderer);
 }
 
