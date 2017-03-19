@@ -13,7 +13,6 @@
 class Game {
 public:
 
-    Game() {}
     ~Game() {}
 
     bool init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen);
@@ -24,7 +23,19 @@ public:
 
     bool running() { return m_bRunning; }
 
+    static Game *Instance() {
+        if (s_pInstance == 0) {
+            s_pInstance = new Game();
+            return s_pInstance;
+        }
+        return s_pInstance;
+    }
+
 private:
+    Game() {}
+
+    static Game *s_pInstance;
+
     SDL_Window* m_pWindow;
     SDL_Renderer* m_pRenderer;
 
@@ -41,6 +52,7 @@ private:
     GameObject* m_player;
     GameObject* m_enemy;
 
+    typedef Game TheGame;
 };
 
 
