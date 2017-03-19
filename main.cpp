@@ -4,18 +4,23 @@ Game* g_game = 0;
 
 
 int main() {
-    g_game = new Game();
+    std::cout << "GAME INIT attempt:";
+    if (TheGame::Instance()->init("WOOT", 100, 100, 640, 480, false)) {
+        std::cout << " SUCCESS!";
 
-    g_game->init("Chapter 1", 100, 100, 640, 480, false);
-
-    while (g_game->running()) {
-        g_game->handleEvents();
-        g_game->update();
-        g_game->render();
+        while (TheGame::Instance()->running()) {
+            TheGame::Instance()->handleEvents();
+            TheGame::Instance()->update();
+            TheGame::Instance()->render();
+            SDL_Delay(10);
+        }
+    } else {
+        std::cout << "FAIL: " << SDL_GetError() << "\n";
+        return -1;
     }
-    g_game->clean();
 
-    return 0;
+    std::cout << "\nGAME CLOSING";
+    TheGame::Instance()->clean();
 }
 
 
